@@ -29,8 +29,12 @@
                             <input type="Nama" name="Nama" class="form-control" id="Nama" aria-describedby="Nama" >
                         </div>
                         <div class="form-group">
-                            <label for="Kelas">Kelas</label>
-                            <input type="Kelas" name="Kelas" class="form-control" id="Kelas" aria-describedby="password" >
+                            <label for="kelas">Kelas</label>
+                            <select name="kelas" class="form-control">
+                                @foreach ($kelas as $Kelas)
+                                <option value="{{$Kelas->id}}">{{$Kelas->nama_kelas}}</option>
+                                @endforeach
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="Jurusan">Jurusan</label>
@@ -41,7 +45,7 @@
                             <input type="No_Handphone" name="No_Handphone" class="form-control" id="No_Handphone" aria-describedby="No_Handphone" >
                         </div>
                         <div class="form-group">
-                            <label for="Email">EmailS</label>
+                            <label for="Email">Email</label>
                             <input type="Email" name="Email" class="form-control" id="Email" aria-describedby="Email" >
                         </div>
                         <div class="form-group">
