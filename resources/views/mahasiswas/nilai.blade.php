@@ -5,9 +5,7 @@
     <div class="row justify-content-center align-items-center">
         <div style="text-align: center">
             <h2>JURUSAN TEKNOLOGI INFORMASI-POLITEKNIK NEGERI MALANG</h2>
-            <hr>
-            <br>
-            <h3 style="margin-top: 20px;">Kartu Hasil Studi (KHS)</h3>
+            <h3 style="margin-top: 20px; color:lightblue">Kartu Hasil Studi (KHS)</h3>
         </div>
         <div class="card" style="width: 100rem;">
             <ul class="list-group list-group-flush">
@@ -15,8 +13,8 @@
                 <li class="list-group-item"><b>Nim: </b>{{$Mahasiswa->Nim}}</li>
                 <li class="list-group-item"><b>Kelas: </b>{{$Mahasiswa->kelas->nama_kelas}}</li>
                 <li class="list-group-item"><b>Jurusan: </b>{{$Mahasiswa->Jurusan}}</li>
+                <hr>
             </ul>
-            <br>
             <div class="col-lg-12 margin-tb">
                 <table class="table-responsive">
                     <table class="table table-bordered">
@@ -34,10 +32,11 @@
                             <td>{{ $MahasiswaMataKuliah->nilai }}</td>
                         </tr>
                         @endforeach
-
-                    </table>
+                    </table><br>
+                    <center><a class="btn btn-success btn-lg" href="{{ route('cetak_pdf',$Mahasiswa->Nim) }}">Cetak ke PDF</a></center>
+                    <br>
                 </table>
             </div>
         </div>
     </div>
-    @endsection
+@endsection

@@ -28,11 +28,9 @@
     <tr>
         <th>Nim</th>
         <th>Nama</th>
+        <th>Foto</th>
         <th>Kelas</th>
         <th>Jurusan</th>
-        <th>No_Handphone</th>
-        <th>Email</th>
-        <th>TL</th>
         <th width="300px">Action</th>
     </tr>
     @foreach ($mahasiswas as $Mahasiswa)
@@ -40,11 +38,10 @@
 
         <td>{{ $Mahasiswa->Nim }}</td>
         <td>{{ $Mahasiswa->Nama }}</td>
+        <td><img width="100px" src="{{asset('storage/'.$Mahasiswa->Foto)}}"></td>
         <td>{{ $Mahasiswa->kelas->nama_kelas }}</td>
         <td>{{ $Mahasiswa->Jurusan }}</td>
-        <td>{{ $Mahasiswa->No_Handphone }}</td>
-        <td>{{ $Mahasiswa->Email }}</td>
-        <td>{{ $Mahasiswa->Tanggal_lahir }}</td>
+ 
         <td>
             <form action="{{ route('mahasiswas.destroy',$Mahasiswa->Nim) }}" method="POST">
 
@@ -53,8 +50,9 @@
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="btn btn-danger">Delete</button>
+                <a class="btn btn-warning" href="{{ route('nilai', $Mahasiswa->Nim) }}">Nilai</a>
             </form>
-            <a class="btn btn-warning" href="{{ route('nilai', $Mahasiswa->Nim) }}">Nilai</a>
+            
         </td>
     </tr>
     @endforeach
